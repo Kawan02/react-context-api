@@ -1,11 +1,15 @@
-function Nome({ nome, mudaNome }) {
+import { UserContext } from "../../contexts/user";
+import { useContext } from "react";
+
+function Nome() {
+  const { alunos, setAlunos } = useContext(UserContext);
   return (
     <div>
       <h2>Componente Nome</h2>
-      <span style={{ color: "#ff0000" }}>Bem vindo: {nome}</span>
+      <span style={{ color: "#ff0000" }}>Bem vindo: {alunos}</span>
       <br />
       <br />
-      <button onClick={() => mudaNome("Alterando o nome")}>Trocar nome</button>
+      <button onClick={() => setAlunos("Nome trocado")}>Troca nome</button>
     </div>
   );
 }

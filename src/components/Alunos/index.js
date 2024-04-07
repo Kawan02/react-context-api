@@ -1,10 +1,13 @@
 import Nome from "../Nome";
+import { UserContext } from "../../contexts/user";
+import { useContext } from "react";
 
-function Alunos({ nome, mudaNome }) {
+function Alunos() {
+  const { qtdAlunos } = useContext(UserContext);
   return (
     <div>
-      <h2>Componente Aluno</h2>
-      <Nome nome={nome} mudaNome={mudaNome} />
+      <h2>Quantidade total de Alunos: {qtdAlunos}</h2>
+      <Nome />
     </div>
   );
 }
